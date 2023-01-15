@@ -18,4 +18,9 @@ public class Lecture {
     private String lectureName;
     private HashSet<User> user;
     private HashSet<Project> project;
+
+    public Lecture(){
+
+    }
+
 }
