@@ -16,5 +16,11 @@ public class Project {
     private Long id;
     @Column(name = "projectName")
     private String projectName;
+    @Column(name = "description")
+    private String description;
     private User user;
+
+    public Project(){
+
+    }
 }
