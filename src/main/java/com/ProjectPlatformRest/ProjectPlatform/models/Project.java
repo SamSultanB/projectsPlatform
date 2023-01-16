@@ -23,4 +23,10 @@ public class Project {
     public Project(){
 
     }
+
+    public Project(String projectName, String description) {
+        this.projectName = projectName;
+        this.description = description;
+    }
+
 }
