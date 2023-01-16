@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 
 @Entity
@@ -18,15 +20,21 @@ public class Project {
     private String projectName;
     @Column(name = "description")
     private String description;
+    @Column(name = "publishedDate")
+    private LocalDate publishedDate;
+    @Column(name = "deadline")
+    private LocalDateTime deadline;
     private User user;
 
     public Project(){
 
     }
 
-    public Project(String projectName, String description) {
+    public Project(String projectName, String description, LocalDate publishedDate, LocalDateTime deadline) {
         this.projectName = projectName;
         this.description = description;
+        this.publishedDate = publishedDate;
+        this.deadline = deadline;
     }
 
 }
