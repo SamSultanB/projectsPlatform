@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "Results")
@@ -15,6 +16,8 @@ public class Result {
     private Long id;
     @Column(name = "fileName")
     private String fileName;
+    @Column(name = "uploadedAt")
+    private LocalDateTime uploadedAt;
     @Column(name = "grade")
     private String grade;
     @Column(name = "comment")
@@ -24,8 +27,9 @@ public class Result {
 
     }
 
-    public Result(String fileName) {
+    public Result(String fileName, LocalDateTime uploadedAt) {
         this.fileName = fileName;
+        this.uploadedAt = uploadedAt;
     }
 
 }
