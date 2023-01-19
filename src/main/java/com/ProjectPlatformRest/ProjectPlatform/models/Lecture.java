@@ -5,9 +5,10 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Table(name = "Lectures")
+@Table(name = "lectures")
 @Getter
 @Setter
 public class Lecture {
@@ -20,11 +21,11 @@ public class Lecture {
     private String password;
 
     @ManyToMany(mappedBy = "lectures")
-    private HashSet<User> user = new HashSet<>();
+    private Set<User> user = new HashSet<>();
 
     @OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
     @JoinColumn(name = "lecture_id", referencedColumnName = "id")
-    private HashSet<Project> project = new HashSet<>();
+    private Set<Project> project = new HashSet<>();
 
     public Lecture(){
 

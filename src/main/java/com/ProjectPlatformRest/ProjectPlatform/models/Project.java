@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.util.HashSet;
 
 @Entity
-@Table(name = "Projects")
+@Table(name = "projects")
 @Getter
 @Setter
 public class Project {
