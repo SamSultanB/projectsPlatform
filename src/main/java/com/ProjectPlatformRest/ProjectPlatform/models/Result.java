@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "Results")
+@Table(name = "results")
 @Getter
 @Setter
 public class Result {
@@ -22,6 +22,14 @@ public class Result {
     private String grade;
     @Column(name = "comment")
     private String comment;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "user_id")
+    private User user;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+    @JoinColumn(name = "project_id")
+    private Project project;
 
     public Result(){
 
