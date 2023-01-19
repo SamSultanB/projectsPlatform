@@ -24,7 +24,6 @@ public class Project {
     private LocalDate publishedDate;
     @Column(name = "deadline")
     private LocalDateTime deadline;
-    private User user;
 
     public Project(){
 

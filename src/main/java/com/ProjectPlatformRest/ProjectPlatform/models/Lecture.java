@@ -18,8 +18,13 @@ public class Lecture {
     private String lectureName;
     @Column(name = "lecturePassword")
     private String password;
-    private HashSet<User> user;
-    private HashSet<Project> project;
+
+    @ManyToMany(mappedBy = "lectures")
+    private HashSet<User> user = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+    @JoinColumn(name = "lecture_id", referencedColumnName = "id")
+    private HashSet<Project> project = new HashSet<>();
 
     public Lecture(){
 
